@@ -21,10 +21,30 @@ stack_a ==>
 1
 nbr_chunk ==> 4
 stack->chunk_size ==> 5
+lower->index= 2 lower data= 4
+lower->index= 4 lower data= 6
+lower->index= 3 lower data= 5
+lower->index= 7 lower data= 9
+lower->index= 6 lower data= 8
+lower->index= 10 lower data= 88
+lower->index= 12 lower data= 90
+lower->index= 13 lower data= 99
+lower->index= 15 lower data= 777
+lower->index= 17 lower data= 8899
+lower->index= 20 lower data= 78978
+lower->index= 16 lower data= 789
+lower->index= 9 lower data= 80
+lower->index= 5 lower data= 7
+lower->index= 11 lower data= 89
+lower->index= 8 lower data= 50
+lower->index= 14 lower data= 343
+lower->index= 18 lower data= 9090
+lower->index= 19 lower data= 9444
+lower->index= 1 lower data= 1
 stack->size_a ==> 20
 head = 0x6030000016f0
 =========> ici 5
-pos == 0
+rra
 pb
 pos == 0
 pb
@@ -35,6 +55,7 @@ pb
 pos == 0
 pb
 stack_a ==>
+8
 88
 90
 99
@@ -49,16 +70,17 @@ stack_a ==>
 343
 9090
 9444
-1
 stack_b ==>
-8
 9
 5
 6
 4
+1
 stack->size_a ==> 15
-head = 0x6030000017e0
+head = 0x6030000017b0
 =========> ici 10
+pos == 0
+pb
 pos == 7
 ra
 ra
@@ -73,14 +95,12 @@ pb
 pos == 1
 ra
 pb
-pos == 3
-ra
-ra
-ra
-pb
 pos == 0
 pb
 stack_a ==>
+9090
+9444
+88
 90
 99
 777
@@ -88,12 +108,8 @@ stack_a ==>
 78978
 789
 89
-343
-9090
-9444
 stack_b ==>
-88
-1
+343
 50
 7
 80
@@ -102,37 +118,35 @@ stack_b ==>
 5
 6
 4
+1
 stack->size_a ==> 10
-head = 0x603000001810
+head = 0x603000001a20
 =========> ici 15
-pos == 0
+rra
+pb
+pos == 2
+ra
+ra
 pb
 pos == 0
-pb
-pos == 4
-ra
-ra
-ra
-ra
 pb
 pos == 0
 pb
 pos == 0
 pb
 stack_a ==>
-9444
-777
 8899
 78978
 789
-stack_b ==>
 9090
-343
-89
+9444
+stack_b ==>
+777
 99
 90
 88
-1
+89
+343
 50
 7
 80
@@ -141,32 +155,34 @@ stack_b ==>
 5
 6
 4
+1
 stack->size_a ==> 5
-head = 0x603000001a50
+head = 0x6030000018a0
 =========> ici 20
-pos == 0
+rra
 pb
 pos == 0
 pb
-pos == 0
+rra
 pb
 pos == 0
 pb
-pos == 0
+rra
 pb
+pos == 1
+ra
 stack_b ==>
 789
 78978
-8899
-777
-9444
 9090
-343
-89
+8899
+9444
+777
 99
 90
 88
-1
+89
+343
 50
 7
 80
@@ -175,19 +191,19 @@ stack_b ==>
 5
 6
 4
+1
 stack_b ==>
 789
 78978
-8899
-777
-9444
 9090
-343
-89
+8899
+9444
+777
 99
 90
 88
-1
+89
+343
 50
 7
 80
@@ -196,4 +212,5 @@ stack_b ==>
 5
 6
 4
+1
 ici

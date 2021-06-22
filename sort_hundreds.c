@@ -29,12 +29,12 @@ void	create_chunk(t_data *stack, int max)
 	while (i < stack->chunk_size)
 	{
 		
-		// if (head->prev->index < stack->chunk_size)
-		// {
-		// 	stack->a = reverse_rotate_a(stack->a);
-		// 	push_b(stack);
-		// 	i++;
-		// }
+		if (head->prev->index < max)
+		{
+			stack->a = reverse_rotate_a(stack->a);
+			push_b(stack);
+			i++;
+		}
 		pos = find_position(stack, max);
 		printf ("pos == %i\n", pos);
 		while (pos > 0)
@@ -114,10 +114,13 @@ void    create_index(t_data *stack)
 		//printf("index = %i\n", index);
 		
 	}
-	// tmp = stack->a;
-	// while (tmp->next != stack->a)
-	// {
-	// 	printf("lower->index= %i lower data= %i\n", tmp->index, tmp->data);
-	// 	tmp = tmp->next;
-	// }
+	tmp = stack->a;
+	int i;
+	i = 0;
+	while (i < 20)
+	{
+		printf("lower->index= %i lower data= %i\n", tmp->index, tmp->data);
+		tmp = tmp->next;
+		i++;
+	}
 }
