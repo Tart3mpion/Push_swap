@@ -75,3 +75,10 @@ void    sort_hundreds(t_data *stack)
 	print_stack(stack);
 }
 
+//void put_back_to_a()
+//===>pos = find_biggest(stack->b, stack);
+//while (stack->b)
+//while (pos > 0)
+//rotate_b()
+//push_a
+
