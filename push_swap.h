@@ -69,8 +69,8 @@ void push_a(t_data *stack);
 int find_smallest(t_node *head, t_data *stack);
 int find_biggest(t_node *head, t_data *stack);
 int is_smaller(int nb, int n);
-//int	low_position(t_data *stack);
-//int	high_position(t_data *stack);
+int	low_position(t_data *stack);
+int	high_position(t_data *stack);
 
 /*push_swap*/
 void    push_swap(t_data *stack);
@@ -87,7 +87,7 @@ void    chunk_sizes(t_data *stack);
 t_node *find_lower(t_node *a, int size);
 void    create_index(t_data *stack);
 void	create_chunk(t_data *stack, int max);
-//void    rotation_efficiency(t_data *stack);
+void    rotation_efficiency(t_data *stack);
 void    sort_hundreds(t_data *stack);
 void    push_back_to_a(t_data *stack);
 int	find_position(t_data *stack, int max);

@@ -1,54 +1,59 @@
 #include "push_swap.h"
 
-void    push_back_to_a(t_data *stack)
-{
-	int	pos;
+// void    push_back_to_a(t_data *stack)
+// {
+// 	int	pos;
 
-	pos = find_biggest(stack->b, stack);
-	if (pos < (stack->chunk_size / 2))
-	{
-		while (pos >= 0)
-		{
-			reverse_rotate_b(stack->b);
-			pos--;
-		}
-	}
-	else
-	{
-		while (pos >= 0)
-		{
-			rotate_b(stack->b);
-			pos--;
-		}
-	}
-	push_a(stack);
-}
+// 	pos = find_biggest(stack->b, stack);
+// 	if (pos < (stack->chunk_size / 2))
+// 	{
+// 		while (pos >= 0)
+// 		{
+// 			reverse_rotate_b(stack->b);
+// 			pos--;
+// 		}
+// 	}
+// 	else
+// 	{
+// 		while (pos >= 0)
+// 		{
+// 			rotate_b(stack->b);
+// 			pos--;
+// 		}
+// 	}
+// 	push_a(stack);
+// }
 void    rotation_efficiency(t_data *stack)
 {
 	t_node *head;
 	int pos;
 
-	head = stack->a;
-	stack->chunk_size = 5;
+	pos = 1;
+	head = stack->b;
+	print_stack(stack);
+	//printf("high_position(stack) ==> %i\n", high_position(stack));
+	//printf("low_position(stack) ==> %i\n", low_position(stack));
 	if (high_position(stack) > low_position(stack))
 	{
 		pos = low_position(stack);
-		while (pos >= 0)
+		//printf("low_position %i\n", pos);
+		while (pos >= 1)
 		{
-			rotate_a(stack->a);
+			stack->b = reverse_rotate_b(stack->b);
 			pos--;
 		}    
 	}
 	else
 	{
 		pos = high_position(stack);
-		while (pos >= 0)
+		//printf("high_position %i\n", pos);
+		while (pos > 1)
 		{
-			reverse_rotate_a(stack->a);
+			stack->b = rotate_b(stack->b);
 			pos--;
 		}    
 	}
-	push_b(stack);
+	push_a(stack);
 }
 int	high_position(t_data *stack)
 {
@@ -56,18 +61,21 @@ int	high_position(t_data *stack)
 	int		pos;
 	int		count;
 
-	top = stack->a;
-	pos = 0;
+	top = stack->b;
+	pos = INT_MAX;
 	count = 0;
-	while (top->next != stack->a)
+	while (count++ <= (stack->size_b / 2))
 	{
-		if (top->index > -1 && top->index < stack->chunk_size)
+		//printf("===========> la ");
+		if (top->data == stack->biggest)
 		{
 			pos = count;
+			//printf("count ==> %i\n", count);
+			
 			return (pos);
 		}
 		top = top->next;
-		count++;
+		//printf("pos_high ==> %i\n", pos);
 	}
 	return (pos);
 }
@@ -78,18 +86,19 @@ int	low_position(t_data *stack)
 	int		pos;
 	int		count;
 
-	bottom = stack->a->prev;
-	pos = 0;
+	bottom = stack->b->prev;
+	pos = INT_MAX;
 	count = 0;
-	while (bottom->prev != stack->a)
+	while (count++ <= (stack->size_b / 2))
 	{
-		if (bottom->index > -1 && bottom->index < stack->chunk_size)
+		//printf("===========> lalala ");
+		if (bottom->data == stack->biggest)
 		{
 			pos = count;
 			return (pos);
 		}
 		bottom = bottom->prev;
-		count++;
 	}
+	//printf("pos_low ==> %i\n", pos);
 	return (pos);
-}//
+}

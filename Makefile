@@ -5,7 +5,8 @@ LIBFT = libft/libft.a
 
 SRCS = main.c utils.c check_inputs.c \
 initialization.c manage_errors.c swap.c rotate.c \
-push.c compare.c sort_three.c push_swap.c sort_hundreds.c
+push.c compare.c sort_three.c push_swap.c sort_hundreds.c \
+other-functions.c
 
 FLAGS = -Wall -Werror -Wextra -I./libft -fsanitize=address -g
 OBJS = $(SRCS:.c=.o)

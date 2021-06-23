@@ -24,8 +24,8 @@ void	create_chunk(t_data *stack, int max)
 	i = 0;
 	pos = 1;
 	head = stack->a;
-	printf("head = %p\n", head);
-	printf("=========> ici %i\n", max);
+	//printf("head = %p\n", head);
+	//printf("=========> ici %i\n", max);
 	while (i < stack->chunk_size)
 	{
 		
@@ -36,11 +36,11 @@ void	create_chunk(t_data *stack, int max)
 		// 	i++;
 		// }
 		pos = find_position(stack, max);
-		printf ("pos == %i\n", pos);
+		//printf ("pos == %i\n", pos);
 		while (pos > 1)
 		{
 			stack->a = rotate_a(stack->a);
-			printf ("stack->a->index == %i\n", stack->a->index);
+			//printf ("stack->a->index == %i\n", stack->a->index);
 			pos--;
 		}
 		//printf ("max == %i\n", max);
@@ -49,7 +49,7 @@ void	create_chunk(t_data *stack, int max)
 		// if (stack->size_a == 3)
 		// 	break;
 	}
-	//print_stack(stack);
+	print_stack(stack);
 }
 
 int	find_position(t_data *stack, int max)

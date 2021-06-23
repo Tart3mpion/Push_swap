@@ -70,15 +70,22 @@ void    sort_hundreds(t_data *stack)
         max = stack->chunk_size + max;
     }
     //sort_three_a(stack);
-    while (stack->size_b >= 0)
-         push_a(stack);
+    push_back_to_a(stack);
 	print_stack(stack);
 }
 
-//void put_back_to_a()
-//===>pos = find_biggest(stack->b, stack);
-//while (stack->b)
-//while (pos > 0)
-//rotate_b()
-//push_a
+void push_back_to_a(t_data *stack)
+{
+    int i;
+
+    i = 0;
+    while (stack->b != NULL)
+    {
+        //printf("stack->size_b ==> %li\n", stack->size_b);
+        find_biggest(stack->b, stack);
+        rotation_efficiency(stack);
+        i++;
+    }
+    print_stack(stack);
+}
 

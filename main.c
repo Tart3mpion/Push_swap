@@ -11,6 +11,9 @@ int main(int ac, char **argv)
 	//create_index(stack);
 	print_stack(stack);
 	push_swap(stack);
+	//find_biggest(stack->a, stack);
+	//find_smallest(stack->a, stack)
+	//printf("biggest == ")
 	//chunk_sizes(stack);
 	//min_is_first(stack->a);
 	//stack->a = min_is_last(stack->a);

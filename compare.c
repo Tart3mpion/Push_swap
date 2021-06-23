@@ -29,19 +29,21 @@ int find_biggest(t_node *head, t_data *stack)
 	int		pos_big;
 
 	top = head;
-	pos_big = 0;
-	count = 0;
-	stack->biggest = head->data;
-	while (top->next != head)
+	pos_big = 1;
+	count = 1;
+	stack->biggest = top->data;
+	while (count++ <= stack->size_b)
 	{
-		count++;
 		top = top->next;
 		if (top->data > stack->biggest)
 		{
 			stack->biggest = top->data;
 			pos_big = count;
 		}
+		
 	}
+	//printf("stack->biggest= %i\n", stack->biggest);
+	//printf("pos_big ====> %i\n", pos_big);
 	return (pos_big);
 }
 
