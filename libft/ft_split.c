@@ -14,7 +14,7 @@
 
 static int	ft_len_word(const char *s, int start, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[start] != c && s[start] != '\0')
@@ -27,8 +27,8 @@ static int	ft_len_word(const char *s, int start, char c)
 
 static int	ft_num_word(const char *s, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -41,7 +41,7 @@ static int	ft_num_word(const char *s, char c)
 	return (count);
 }
 
-char		**ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	int		start;
 	char	**array;
@@ -52,7 +52,8 @@ char		**ft_split(const char *s, char c)
 	i = 0;
 	start = 0;
 	nb_word = ft_num_word(s, c);
-	if (!(array = (char **)malloc(sizeof(char *) * (nb_word + 1))))
+	array = (char **)malloc(sizeof(char *) * (nb_word + 1));
+	if (!array)
 		return (NULL);
 	while (i < nb_word)
 	{

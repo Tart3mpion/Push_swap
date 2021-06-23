@@ -14,7 +14,7 @@
 
 static int	ft_len(long nb)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (nb == 0)
@@ -32,7 +32,7 @@ static int	ft_len(long nb)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*res;
 	int		len;
