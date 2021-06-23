@@ -8,7 +8,7 @@ void    chunk_sizes(t_data *stack)
 	if (stack->size_a == 100)
 		stack->chunk_size =  stack->size_a / 5;
 	if (stack->size_a == 500)
-		stack->chunk_size = stack->size_a / 11;
+		stack->chunk_size = stack->size_a / 10;
 }
 
 // /*  ==>scanner par le haut si on en trouve un on stocke sa position
@@ -49,7 +49,7 @@ void	create_chunk(t_data *stack, int max)
 		// if (stack->size_a == 3)
 		// 	break;
 	}
-	print_stack(stack);
+	//print_stack(stack);
 }
 
 int	find_position(t_data *stack, int max)
@@ -63,11 +63,11 @@ int	find_position(t_data *stack, int max)
 	pos = 1;
 	// if (head == NULL)
 	// 	return (1)
-	printf("=======> ca rentre ou pas ?\n");
+	//printf("=======> ca rentre ou pas ?\n");
 	while (count <= stack->size_a)
 	{
-		printf("head->index ===> %i\n", head->index);
-		printf("max ===> %i\n", max);
+		//printf("head->index ===> %i\n", head->index);
+		//printf("max ===> %i\n", max);
 		if (head->index <= max)
 		{
 			pos = count;
@@ -124,7 +124,7 @@ void    create_index(t_data *stack)
 	i = 0;
 	while (i < 20)
 	{
-		printf("lower->index= %i lower data= %i\n", tmp->index, tmp->data);
+		//printf("lower->index= %i lower data= %i\n", tmp->index, tmp->data);
 		tmp = tmp->next;
 		i++;
 	}

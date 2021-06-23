@@ -9,7 +9,7 @@ int main(int ac, char **argv)
 		return (-1); //==>est ce que s'il y a un seul parametre avec des erreurs on doit retourner error
 	stack = init_stack(stack, ac, argv);
 	//create_index(stack);
-	print_stack(stack);
+	//print_stack(stack);
 	push_swap(stack);
 	//find_biggest(stack->a, stack);
 	//find_smallest(stack->a, stack)

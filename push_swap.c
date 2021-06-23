@@ -6,12 +6,12 @@ void    push_swap(t_data *stack)
         stack->a = swap_a(stack->a);
     if (stack->ac -1 == 3)
         sort_three_a(stack);
-    //if (stack->ac -1 > 3 && stack->ac -1 < 100)
-        //insertion_sort(stack);
+    if (stack->ac -1 > 3 && stack->ac -1 < 100)
+        insertion_sort(stack);
     else
     {
         sort_hundreds(stack);
-        printf("ici");
+        //printf("ici");
     }
 }
 
@@ -55,23 +55,23 @@ void    sort_hundreds(t_data *stack)
 
     
 	head = stack->a;
-	//chunk_sizes(stack);
-	stack->chunk_size = 5;
+	chunk_sizes(stack);
+	//stack->chunk_size = 5;
     max = stack->chunk_size;
 	nbr_chunk = (stack->size_a / stack->chunk_size);
 	//printf("stack->size_a ==> %li\n", stack->size_a);
-	printf("nbr_chunk ==> %i\n", nbr_chunk);
-	printf("stack->chunk_size ==> %i\n", stack->chunk_size);
+	//printf("nbr_chunk ==> %i\n", nbr_chunk);
+	//printf("stack->chunk_size ==> %i\n", stack->chunk_size);
 	create_index(stack);
     while (stack->size_a > 3)
     {
-        printf("stack->size_a ==> %li\n", stack->size_a);
+        //printf("stack->size_a ==> %li\n", stack->size_a);
         create_chunk(stack, max);
         max = stack->chunk_size + max;
     }
     //sort_three_a(stack);
     push_back_to_a(stack);
-	print_stack(stack);
+	//print_stack(stack);
 }
 
 void push_back_to_a(t_data *stack)
@@ -86,6 +86,6 @@ void push_back_to_a(t_data *stack)
         rotation_efficiency(stack);
         i++;
     }
-    print_stack(stack);
+    //print_stack(stack);
 }
 

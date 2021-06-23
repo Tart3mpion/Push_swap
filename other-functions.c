@@ -30,7 +30,7 @@ void    rotation_efficiency(t_data *stack)
 
 	pos = 1;
 	head = stack->b;
-	print_stack(stack);
+	//print_stack(stack);
 	//printf("high_position(stack) ==> %i\n", high_position(stack));
 	//printf("low_position(stack) ==> %i\n", low_position(stack));
 	if (high_position(stack) > low_position(stack))
