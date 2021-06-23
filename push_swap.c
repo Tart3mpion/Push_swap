@@ -70,8 +70,8 @@ void    sort_hundreds(t_data *stack)
         max = stack->chunk_size + max;
     }
     //sort_three_a(stack);
-    // while (stack->size_b >= 0)
-    //     push_a(stack);
+    while (stack->size_b >= 0)
+         push_a(stack);
 	print_stack(stack);
 }
 

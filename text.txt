@@ -1,216 +1,264 @@
 stack_a ==>
-4
-6
-5
-9
-8
-88
 90
-99
-777
-8899
-78978
-789
-80
-7
-89
-50
-343
-9090
-9444
+95
+78
+56
+2
+8
+9
+57
+43
 1
+87
+45
+23
+3
+5
+890
+789
+10
+14
+24
 nbr_chunk ==> 4
 stack->chunk_size ==> 5
-lower->index= 2 lower data= 4
-lower->index= 4 lower data= 6
-lower->index= 3 lower data= 5
-lower->index= 7 lower data= 9
-lower->index= 6 lower data= 8
-lower->index= 10 lower data= 88
-lower->index= 12 lower data= 90
-lower->index= 13 lower data= 99
-lower->index= 15 lower data= 777
-lower->index= 17 lower data= 8899
-lower->index= 20 lower data= 78978
-lower->index= 16 lower data= 789
-lower->index= 9 lower data= 80
-lower->index= 5 lower data= 7
-lower->index= 11 lower data= 89
-lower->index= 8 lower data= 50
-lower->index= 14 lower data= 343
-lower->index= 18 lower data= 9090
-lower->index= 19 lower data= 9444
+lower->index= 17 lower data= 90
+lower->index= 18 lower data= 95
+lower->index= 15 lower data= 78
+lower->index= 13 lower data= 56
+lower->index= 2 lower data= 2
+lower->index= 5 lower data= 8
+lower->index= 6 lower data= 9
+lower->index= 14 lower data= 57
+lower->index= 11 lower data= 43
 lower->index= 1 lower data= 1
+lower->index= 16 lower data= 87
+lower->index= 12 lower data= 45
+lower->index= 9 lower data= 23
+lower->index= 3 lower data= 3
+lower->index= 4 lower data= 5
+lower->index= 20 lower data= 890
+lower->index= 19 lower data= 789
+lower->index= 7 lower data= 10
+lower->index= 8 lower data= 14
+lower->index= 10 lower data= 24
 stack->size_a ==> 20
 head = 0x6030000016f0
 =========> ici 5
-rra
-pb
-pos == 0
-pb
-pos == 0
-pb
-pos == 0
-pb
-pos == 0
-pb
-stack_a ==>
-8
-88
-90
-99
-777
-8899
-78978
-789
-80
-7
-89
-50
-343
-9090
-9444
-stack_b ==>
-9
-5
-6
-4
-1
-stack->size_a ==> 15
-head = 0x6030000017b0
-=========> ici 10
-pos == 0
-pb
-pos == 7
+=======> ca rentre ou pas ?
+head->index ===> 17
+max ===> 5
+head->index ===> 18
+max ===> 5
+head->index ===> 15
+max ===> 5
+head->index ===> 13
+max ===> 5
+head->index ===> 2
+max ===> 5
+pos == 5
 ra
+stack->a->index == 18
 ra
+stack->a->index == 15
 ra
+stack->a->index == 13
 ra
-ra
-ra
-ra
+stack->a->index == 2
 pb
-pos == 0
-pb
+=======> ca rentre ou pas ?
+head->index ===> 5
+max ===> 5
 pos == 1
+pb
+=======> ca rentre ou pas ?
+head->index ===> 6
+max ===> 5
+head->index ===> 14
+max ===> 5
+head->index ===> 11
+max ===> 5
+head->index ===> 1
+max ===> 5
+pos == 4
 ra
+stack->a->index == 14
+ra
+stack->a->index == 11
+ra
+stack->a->index == 1
 pb
-pos == 0
+=======> ca rentre ou pas ?
+head->index ===> 16
+max ===> 5
+head->index ===> 12
+max ===> 5
+head->index ===> 9
+max ===> 5
+head->index ===> 3
+max ===> 5
+pos == 4
+ra
+stack->a->index == 12
+ra
+stack->a->index == 9
+ra
+stack->a->index == 3
 pb
-stack_a ==>
-9090
-9444
-88
-90
-99
-777
-8899
-78978
-789
-89
-stack_b ==>
-343
-50
-7
-80
-8
-9
-5
-6
-4
-1
+=======> ca rentre ou pas ?
+head->index ===> 4
+max ===> 5
+pos == 1
+pb
+stack->size_a ==> 15
+head = 0x6030000019c0
+=========> ici 10
+=======> ca rentre ou pas ?
+head->index ===> 20
+max ===> 10
+head->index ===> 19
+max ===> 10
+head->index ===> 7
+max ===> 10
+pos == 3
+ra
+stack->a->index == 19
+ra
+stack->a->index == 7
+pb
+=======> ca rentre ou pas ?
+head->index ===> 8
+max ===> 10
+pos == 1
+pb
+=======> ca rentre ou pas ?
+head->index ===> 10
+max ===> 10
+pos == 1
+pb
+=======> ca rentre ou pas ?
+head->index ===> 17
+max ===> 10
+head->index ===> 18
+max ===> 10
+head->index ===> 15
+max ===> 10
+head->index ===> 13
+max ===> 10
+head->index ===> 6
+max ===> 10
+pos == 5
+ra
+stack->a->index == 18
+ra
+stack->a->index == 15
+ra
+stack->a->index == 13
+ra
+stack->a->index == 6
+pb
+=======> ca rentre ou pas ?
+head->index ===> 14
+max ===> 10
+head->index ===> 11
+max ===> 10
+head->index ===> 16
+max ===> 10
+head->index ===> 12
+max ===> 10
+head->index ===> 9
+max ===> 10
+pos == 5
+ra
+stack->a->index == 11
+ra
+stack->a->index == 16
+ra
+stack->a->index == 12
+ra
+stack->a->index == 9
+pb
 stack->size_a ==> 10
-head = 0x603000001a20
+head = 0x6030000019c0
 =========> ici 15
-rra
+=======> ca rentre ou pas ?
+head->index ===> 20
+max ===> 15
+head->index ===> 19
+max ===> 15
+head->index ===> 17
+max ===> 15
+head->index ===> 18
+max ===> 15
+head->index ===> 15
+max ===> 15
+pos == 5
+ra
+stack->a->index == 19
+ra
+stack->a->index == 17
+ra
+stack->a->index == 18
+ra
+stack->a->index == 15
 pb
+=======> ca rentre ou pas ?
+head->index ===> 13
+max ===> 15
+pos == 1
+pb
+=======> ca rentre ou pas ?
+head->index ===> 14
+max ===> 15
+pos == 1
+pb
+=======> ca rentre ou pas ?
+head->index ===> 11
+max ===> 15
+pos == 1
+pb
+=======> ca rentre ou pas ?
+head->index ===> 16
+max ===> 15
+head->index ===> 12
+max ===> 15
 pos == 2
 ra
-ra
+stack->a->index == 12
 pb
-pos == 0
-pb
-pos == 0
-pb
-pos == 0
-pb
-stack_a ==>
-8899
-78978
-789
-9090
-9444
-stack_b ==>
-777
-99
-90
-88
-89
-343
-50
-7
-80
-8
-9
-5
-6
-4
-1
 stack->size_a ==> 5
-head = 0x6030000018a0
+head = 0x6030000019c0
 =========> ici 20
-rra
-pb
-pos == 0
-pb
-rra
-pb
-pos == 0
-pb
-rra
-pb
+=======> ca rentre ou pas ?
+head->index ===> 20
+max ===> 20
 pos == 1
-ra
+pb
+=======> ca rentre ou pas ?
+head->index ===> 19
+max ===> 20
+pos == 1
+pb
+rra
+stack_a ==>
+87
+90
+95
 stack_b ==>
 789
-78978
-9090
-8899
-9444
-777
-99
-90
-88
-89
-343
-50
-7
-80
-8
+890
+45
+43
+57
+56
+78
+23
 9
+24
+14
+10
 5
-6
-4
+3
 1
-stack_b ==>
-789
-78978
-9090
-8899
-9444
-777
-99
-90
-88
-89
-343
-50
-7
-80
 8
-9
-5
-6
-4
-1
+2
 ici
