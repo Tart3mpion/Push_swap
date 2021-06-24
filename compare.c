@@ -22,7 +22,8 @@ int	find_smallest(t_node *head, t_data *stack)
 	}
 	return (pos_min);
 }
-int find_biggest(t_node *head, t_data *stack)
+
+int	find_biggest(t_node *head, t_data *stack)
 {
 	t_node	*top;
 	int		count;
@@ -39,11 +40,8 @@ int find_biggest(t_node *head, t_data *stack)
 		{
 			stack->biggest = top->data;
 			pos_big = count;
-		}
-		
+		}	
 	}
-	//printf("stack->biggest= %i\n", stack->biggest);
-	//printf("pos_big ====> %i\n", pos_big);
 	return (pos_big);
 }
 
@@ -53,5 +51,3 @@ int	is_smaller(int nb, int n)
 		return (1);
 	return (0);
 }
-
-

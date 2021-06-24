@@ -1,13 +1,19 @@
 #include "push_swap.h"
 
-void    ft_errors(t_data *stack)
+void	ft_errors(t_data *stack)
 {
-    printf("Error\n");
-    if (stack)
-        free(stack);
-    // if (stack->a)
-    //     free()
-    ///
-    exit (1);
+	printf("Error\n");
+	if (stack->a)
+		free(stack->a);
+	exit (1);
 }
-//=====>>needs to create a free function which will free the entire chained list.
+
+void	ft_free(t_data *stack)
+{
+	while (stack->a->next == NULL)
+	{
+		stack->a = stack->a->next;
+		free(stack->a->prev);
+		stack->a->prev = NULL;
+	}
+}

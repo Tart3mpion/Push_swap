@@ -1,61 +1,12 @@
 #include "push_swap.h"
-long int	ft_atoli(const char *str)
-{
-	long int i;
-	long int nb;
-	int sign;
 
-	nb = 0;
-	sign = 1;
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i++] == '-')
-			sign = -1;
-	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + (str[i] - 48);
-		i++;
-	}
-	return (nb * sign);
-}
-int	ft_atoi(const char *str)
+void	print_stack(t_data *stack)
 {
-	int i;
-	int nb;
-	int sign;
-
-	nb = 0;
-	sign = 1;
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i++] == '-')
-			sign = -1;
-	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + (str[i] - 48);
-		i++;
-	}
-	return (nb * sign);
-}
-
-void print_stack(t_data *stack)
-{
-	// printf("youhouuu?\n");
-	// printf("%p\n", head_a);
-	t_node *head_a;
-	t_node *head_b;
+	t_node	*head_a;
+	t_node	*head_b;
 
 	head_a = stack->a;
 	head_b = stack->b;
-	//printf("here %li\n", head_a->data);
 	if (head_a != NULL)
 	{
 		printf("stack_a ==>\n");
@@ -77,29 +28,91 @@ void print_stack(t_data *stack)
 		printf("%i\n", head_b->data);
 	}
 }
-void stack_len(t_data *stack)
-{
-    t_node *head;
-    
-    head = stack->a;
-    while (head->next != stack->a)
-    {
-        head = head->next;
-        stack->size_a++;
-    }
-    stack->size_a++;
-}
-void put_min_to_top(t_data *stack)
-{
-    int pos_min;
 
-    pos_min = find_smallest(stack->a, stack);
-    while (pos_min != 0)
-    {    
-        if (pos_min < 2)
-            stack->a = rotate_a(stack->a);
-        else if (pos_min >= 2)
-            stack->a = reverse_rotate_a(stack->a);   
-        pos_min = find_smallest(stack->a, stack);    
-    }
+// /*  ==>scanner par le haut si on en trouve un on stocke sa position
+//     ==>puis chercher un autre en commencant par le bas
+//     ==>calculer lequel est le plus rapide a push
+// */
+
+void	rotation_efficiency(t_data *stack)
+{
+	t_node	*head;
+	int		pos;
+
+	pos = 1;
+	head = stack->b;
+	if (high_position(stack) > low_position(stack))
+	{
+		pos = low_position(stack);
+		while (pos >= 1)
+		{
+			stack->b = reverse_rotate_b(stack->b);
+			pos--;
+		}
+	}
+	else
+	{
+		pos = high_position(stack);
+		while (pos > 1)
+		{
+			stack->b = rotate_b(stack->b);
+			pos--;
+		}
+	}
+	push_a(stack);
+}
+
+int	high_position(t_data *stack)
+{
+	t_node	*top;
+	int		pos;
+	int		count;
+
+	top = stack->b;
+	pos = INT_MAX;
+	count = 0;
+	while (count++ <= (stack->size_b / 2))
+	{
+		if (top->data == stack->biggest)
+		{
+			pos = count;
+			return (pos);
+		}
+		top = top->next;
+	}
+	return (pos);
+}
+
+int	low_position(t_data *stack)
+{
+	t_node	*bottom;
+	int		pos;
+	int		count;
+
+	bottom = stack->b->prev;
+	pos = INT_MAX;
+	count = 0;
+	while (count++ <= (stack->size_b / 2))
+	{
+		if (bottom->data == stack->biggest)
+		{
+			pos = count;
+			return (pos);
+		}
+		bottom = bottom->prev;
+	}
+	return (pos);
+}
+
+void	push_back_to_a(t_data *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack->b != NULL)
+	{
+		find_biggest(stack->b, stack);
+		rotation_efficiency(stack);
+		i++;
+	}
 }

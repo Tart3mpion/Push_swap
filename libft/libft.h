@@ -24,6 +24,7 @@ typedef struct s_list
 }					t_list;
 
 int					ft_atoi(const char *str);
+long int			ft_atoli(const char *str);
 char				*ft_strdup(const char *s1);
 char				*ft_strnstr(const char *s, const char *n, size_t len);
 void				ft_bzero(void *s, size_t n);

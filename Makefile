@@ -1,31 +1,30 @@
 
 NAME = push_swap
 
-LIBFT = libft/libft.a
-
 SRCS = main.c utils.c check_inputs.c \
-initialization.c manage_errors.c swap.c rotate.c \
-push.c compare.c sort_three.c push_swap.c sort_hundreds.c \
-other-functions.c
+initialization.c manage_errors.c pushandswap.c rotate.c \
+compare.c sort_three.c push_swap.c quick_sort.c 
 
-FLAGS = -Wall -Werror -Wextra -I./libft -fsanitize=address -g
+LIB = $(SRC_FOLDER)libft/
+
+INCLUDES = /includes/
+FLAGS = -I.$(INCLUDES) -I$(LIB) -Wall -Werror -Wextra
 OBJS = $(SRCS:.c=.o)
-
-CC = clang $(FLAGS)
-LIBS = ./libft
+CC = clang -g $(FLAGS)
 
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	make -C $(LIBS)
-	$(CC) -o $(NAME) $(OBJS) -L$(LIBS)
+	make -C $(LIB)
+	$(CC) $(OBJS) -L$(LIB) -lft -o $(NAME)
 
 clean :
+	make clean -C $(LIB)
 	rm $(OBJS)
-	make clean -C ./libft
 
 fclean : clean
+	make fclean -C $(LIB)
 	rm $(NAME)
 
 re : fclean all
