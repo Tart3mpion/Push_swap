@@ -112,6 +112,7 @@ t_node	*del_element_top(t_node *head)
 		head = tmp->next;
 		tmp->prev->next = head;
 		head->prev = tmp->prev;
+		free(tmp);
 	}
 	return (head);
 }
