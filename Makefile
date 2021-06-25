@@ -1,30 +1,47 @@
 
+
 NAME = push_swap
 
-SRCS = main.c utils.c check_inputs.c \
-initialization.c manage_errors.c pushandswap.c rotate.c \
-compare.c sort_three.c push_swap.c quick_sort.c 
+SRCS =	main.c\
+		check_inputs.c\
+		compare.c\
+		initialization.c\
+		manage_errors.c\
+		push_swap.c\
+		pushandswap.c\
+		quick_sort.c\
+		rotate.c\
+		sort_three.c\
+		utils.c
 
-LIB = $(SRC_FOLDER)libft/
+OBJS =${addprefix srcs/,${SRCS:.c=.o}}
 
-INCLUDES = /includes/
-FLAGS = -I.$(INCLUDES) -I$(LIB) -Wall -Werror -Wextra
-OBJS = $(SRCS:.c=.o)
-CC = clang -g $(FLAGS)
+INCLUDES = includes
 
+CC = clang
 
-all : $(NAME)
+CFLAGS = -Wall -Werror -Wextra -g3
 
-$(NAME) : $(OBJS)
-	make -C $(LIB)
-	$(CC) $(OBJS) -L$(LIB) -lft -o $(NAME)
+RM = rm -rf
 
-clean :
-	make clean -C $(LIB)
-	rm $(OBJS)
+LIBS = libft/libft.a
 
-fclean : clean
-	make fclean -C $(LIB)
-	rm $(NAME)
+.c.o:
+		${CC} ${CFLAGS} -I${INCLUDES} -c $< -o ${<:.c=.o}
 
-re : fclean all
+all:	${NAME}
+
+$(NAME):	${OBJS}
+		make -C libft
+		${CC} ${CFLAGS} -L libft -o ${NAME} ${OBJS} ${LIBS}
+
+clean:
+		${RM} ${OBJS}
+		make clean -C libft
+
+fclean:	clean
+		${RM} ${NAME} ${LIBS}
+
+re: fclean all
+
+.PHONY:	all clean fclean re

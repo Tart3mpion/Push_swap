@@ -10,8 +10,8 @@ void	ft_errors(t_data *stack)
 
 void	free_stack(t_node *top)
 {
-	t_node *head;
-	t_node *tofree;
+	t_node	*head;
+	t_node	*tofree;
 
 	if (top)
 	{
